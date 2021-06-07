@@ -18,7 +18,7 @@
  - To compile：g++ a.cpp -o a.exe
  - To run：a.exe 1 2
 - Ubuntu:
- - To compile:g++ a.cpp -o a
+ - To compile:g++ a.cpp -o a.o
  - To run: ./a 1 2
 	
 #### 2. Please list（列举）the potential advantages and disadvantages of obtaining arguments by file reading vs. by command-line argument.
@@ -28,10 +28,13 @@
   2) Files can be copied and modified easily.
   3) Files can provide a larger size of arguments.
   4) When reading large amounts of arguments(>= 10000), file reading are faster than command-line argument.
+  5) Files can be saved, thus provides an easier way to save and analyze data. 
 - Disadvantage of file reading:
   1) File IO is more complex and slower than command arguments with exceptions to handle.
   2) Conventions(e.g. “a.out”) are required without command argument.
   3) Not easy to know argument amounts.
+  4) Files cannot be loaded during running process.
+  5) Some commands like std::endl may cause the process to crash. 
 - Advantage of command-line argument:
   - Make the program easier to be called in command-line.
   - Make the program callable in batch scripts for tasks like parameter sweeping (参数扫描, 以不同的参数运行同一个程序).
